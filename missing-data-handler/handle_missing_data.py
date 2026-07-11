@@ -18,3 +18,9 @@ df[df["cpi_missing"].isna()]
 df["method_ffill"] = df["cpi_missing"].ffill()
 df["method_bfill"] = df["cpi_missing"].bfill()
 df[df["cpi_missing"].isna()]
+
+df.loc["2023-01-01":"2026-01-01"].drop(columns=["cpi_missing"]).plot(title="Different ways of filling missing values",figsize=(25,10),linewidth=3)
+plt.grid(True)
+plt.show()
+
+
