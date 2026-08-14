@@ -2,9 +2,12 @@ import mplfinance as mpf
 import pandas as pd
 import yfinance as yf
 
-df = yf.download("AAPL", period="6mo", progress=False)
+df = yf.download("AAPL",
+                 period="6mo", 
+                 progress=False)
 
-if isinstance(df.columns, pd.MultiIndex):
+if isinstance(df.columns,
+              pd.MultiIndex):
   df.columns = df.columns.droplevel(1)
 
 custom_style = mpf.make_mpf_style(
