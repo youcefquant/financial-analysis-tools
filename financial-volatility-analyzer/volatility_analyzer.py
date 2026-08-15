@@ -19,7 +19,7 @@ df_rv=(
 
     df["log_rtn"].groupby(pd.Grouper(freq="M"))
     .apply(vilz)
-    .to_frame(name="v_lo")  # تحويل السلسلة إلى DataFrame وتسمية العمود بـ v_lo
+    .to_frame(name="v_lo")  
 )
 
 df_rv.rv=df_rv["v_lo"]*np.sqrt(12)
