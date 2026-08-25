@@ -20,3 +20,9 @@ A Python-based quantitative finance tool designed to fetch historical stock data
    ```bash
    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
    cd your-repo-name
+   
+## 💡 Why Plotly over Static Libraries?
+Unlike static charting libraries (e.g., `matplotlib` or standard `mplfinance`), this implementation provides:
+- Dynamic inspection of OHLC price data on hover.
+- Fluid zooming and panning across different time horizons.
+- Seamless weekend gap suppression for quantitative time-series analysis.
