@@ -38,4 +38,23 @@ sm.qqplot(df["rtn_log"].values,
           line="s"
           ,ax=ax[1] )
 ax[1].set_title("qq piles", fontsize=20)
+
+#To calculate and plot returns
+(
+    df["rtn_log"]
+    .plot(title="S&P 500 returns",
+          figsize=(16, 8),
+          color="skyblue")
+)
+#To find out if the previous days are related to the upcoming days and have an effect on them
+import matplotlib.pyplot as plt
+
+import statsmodels.tsa.api as smt
+n_lages=50
+signf=0.05
+clean_data=df["rtn_log"].dropna().values
+
+asf = smt.graphics.plot_acf(clean_data,
+                            lags=n_lages,
+                            alpha=signf)
 plt.show()
